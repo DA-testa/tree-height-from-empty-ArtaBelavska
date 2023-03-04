@@ -33,10 +33,11 @@ def main():
         parents = list(map(int, input().split()))
     elif "F" in text:
         filename=input()
+        file='./test/'+filename
         if "a" not in filename:
             try:
-                with open ("/test/16", mode="r") as fails:
-                    text=fails.read()
+                with open(file) as fails:
+                    n=int(fails.readline())
                     parents=list(map(int, fails.readline().split()))
             except Exception as j:
                 print("Error:", str(j))
